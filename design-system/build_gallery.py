@@ -2,7 +2,8 @@
 import json, os, re, sys
 
 SRC = '/Users/rob/Desktop/_XrossWorld/site/index.html'
-OUT = ['/Users/rob/Desktop/_XrossWorld/site/gallery.html', '/tmp/xw-site/gallery.html']
+OUT = ['/Users/rob/Desktop/_XrossWorld/site/gallery.html', '/tmp/xw-site/gallery.html',
+       '/Users/rob/Desktop/_XrossWorld/orbital/index.html', '/tmp/orbital/index.html']
 ORDER = ['foundations', 'campaign', 'carousel', 'cards', 'motion', 'chat', 'heroes']
 WIDE = re.compile(r'(hero|grid|mission|console|stage|globe|emitter|deck|thread|feed|lattice|price tag|ticker|wordmark)', re.I)
 
@@ -16,6 +17,11 @@ script     = html.split('<script>',1)[1].split('</script>',1)[0]
 # strip only the page-router (everything before `function toast(` is the routing block)
 i1 = script.index('function toast(')
 driverJS = script[i1:]
+# genericize brand strings that live in the driver JS (carousel card lockup)
+driverJS = driverJS.replace('XW · Stable', 'ORBITAL · Stable')
+driverJS = driverJS.replace(
+    '<path d="M3 3L21 21M21 3L3 21" stroke="#020617" stroke-width="3" stroke-linecap="round"/>',
+    '<ellipse cx="12" cy="12" rx="10" ry="3.6" transform="rotate(32 12 12)" stroke="#020617" stroke-width="2"/><circle cx="12" cy="12" r="2.6" fill="#020617"/>')
 
 CHROME = """
 /* ===== gallery chrome ===== */
@@ -117,8 +123,14 @@ setTimeout(()=>window.dispatchEvent(new Event('resize')),900);
 """
 
 LOGO = ('<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">'
-        '<path d="M3 3L21 21M21 3L3 21" stroke="#E6FF00" stroke-width="2.6" stroke-linecap="round"/>'
-        '<circle cx="12" cy="12" r="2.4" fill="#020617" stroke="#E6FF00" stroke-width="1.4"/></svg>')
+        '<ellipse cx="12" cy="12" rx="10.4" ry="3.8" transform="rotate(32 12 12)" stroke="#E6FF00" stroke-width="1.5"/>'
+        '<ellipse cx="12" cy="12" rx="10.4" ry="3.8" transform="rotate(-32 12 12)" stroke="#CBD5E1" stroke-width="1.2" opacity=".5"/>'
+        '<circle cx="12" cy="12" r="2.8" fill="#E6FF00"/></svg>')
+
+FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E"
+           "%3Crect width='24' height='24' fill='%23020617'/%3E"
+           "%3Cellipse cx='12' cy='12' rx='10' ry='3.6' transform='rotate(32 12 12)' fill='none' stroke='%23E6FF00' stroke-width='1.4'/%3E"
+           "%3Ccircle cx='12' cy='12' r='3' fill='%23E6FF00'/%3E%3C/svg%3E")
 
 doc = f"""<!DOCTYPE html>
 <html lang="en">
@@ -126,18 +138,21 @@ doc = f"""<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#020617">
-<title>XROSSWORLD — Design System</title>
-<meta name="robots" content="noindex">
+<title>Orbital — Design System</title>
+<meta name="description" content="Orbital — a high-contrast, neon-on-navy interface system. Every component live, in one playground.">
+<meta property="og:title" content="Orbital — Design System">
+<meta property="og:description" content="A high-contrast, neon-on-navy interface system. Every component live, in one playground.">
+<link rel="icon" href="{FAVICON}">
 <style>{baseCSS}</style>
 <style id="orbital">{orbitalCSS}</style>
 <style>{CHROME}</style>
 </head>
 <body>
-<div class="dsx-top">{LOGO}<h1>XROSSWORLD</h1><span class="sub">Design System · Orbital</span></div>
+<div class="dsx-top">{LOGO}<h1>ORBITAL</h1><span class="sub">Design System</span></div>
 <div class="dsx-wrap">
 <nav class="dsx-nav">{''.join(navlinks)}</nav>
 <main class="dsx-main">
-<div class="dsx-intro"><h2>The Orbital component library</h2><p>Every working component from the XROSSWORLD prototype, pulled live from the same CSS and JS that ship on the site — organized by the surfaces they build: campaign-management controls, the selection carousel, profile &amp; data cards, animated globes, chat &amp; scoring, and the landing heroes. Interact with anything; this is the playground before it ports to Storybook.</p></div>
+<div class="dsx-intro"><h2>Orbital — the component system</h2><p>A high-contrast, neon-on-navy interface language: flat white surfaces, hard offset shadows, square corners, and one electric accent. Every component here is live — rendered from the system's own CSS and JS — organized by the surfaces it builds: foundations, campaign-management controls, the selection carousel, profile &amp; data cards, animated globes, chat &amp; scoring, and landing heroes. Interact with anything; this is the playground before it ports to Storybook.</p></div>
 {''.join(cats)}
 </main>
 </div>

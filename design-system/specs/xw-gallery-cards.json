@@ -1,55 +1,79 @@
 {
-  "categoryId": "cards",
-  "category": "Profile & Data Cards",
-  "blurb": "Roster, comment, investor, price-tag, stat and agent cards — the flat white surfaces with hard navy offset shadows that carry every profile and data block on the site.",
-  "components": [
-    {
-      "name": "Roster card",
-      "blurb": "A single creator-position card from the campaign roster: duotoned photo avatar, handle, follower meta and XRS score. Driven by a CSS class for its anchor and picked states; tapping the live card toggles .picked.",
-      "states": ["default", "anchor", "picked"],
-      "html": "<div class=\"roster\">\n  <button class=\"card-c\" onclick=\"this.classList.toggle('picked')\">\n    <div class=\"pf pf-photo\"><img src=\"faces/f1.jpg\" alt=\"\" loading=\"lazy\"></div>\n    <div class=\"h\">@rio.climbs</div>\n    <div class=\"meta\">62K</div>\n    <div class=\"xrs\">XRS 91</div>\n  </button>\n  <button class=\"card-c anchor\" onclick=\"this.classList.toggle('picked')\">\n    <div class=\"pf pf-photo\"><img src=\"faces/f2.jpg\" alt=\"\" loading=\"lazy\"></div>\n    <div class=\"h\">@northstar.maya</div>\n    <div class=\"meta\">1.1M</div>\n    <div class=\"xrs\">XRS 84</div>\n  </button>\n  <button class=\"card-c picked\" onclick=\"this.classList.toggle('picked')\">\n    <div class=\"pf pf-photo\"><img src=\"faces/f3.jpg\" alt=\"\" loading=\"lazy\"></div>\n    <div class=\"h\">@koa.builds</div>\n    <div class=\"meta\">28K</div>\n    <div class=\"xrs\">XRS 93</div>\n  </button>\n</div>",
-      "requiredIds": [],
-      "initJs": ""
-    },
-    {
-      "name": "Comment card",
-      "blurb": "A live-feed comment chip: audience handle, the comment text and a sentiment tag. The tag comes in three CSS-driven variants — positive, watch (intent) and spike (velocity). Includes the live three-column scrolling feed.",
-      "states": ["tag (positive)", "tag.watch (intent)", "tag.spike (velocity)", "live feed"],
-      "html": "<div style=\"display:grid;grid-template-columns:1fr;gap:12px;max-width:320px\">\n  <div class=\"ccard\">\n    <div class=\"who\"><span class=\"hdl\">@rio.climbs · audience</span></div>\n    <div class=\"txt\">been waiting for someone honest about sizing. ordering the 9.5</div>\n    <span class=\"tag\">▲ POSITIVE</span>\n  </div>\n  <div class=\"ccard\">\n    <div class=\"who\"><span class=\"hdl\">@vega.gardens · audience</span></div>\n    <div class=\"txt\">genuine question — do these hold up in rain? asking before I buy</div>\n    <span class=\"tag watch\">◎ INTENT SIGNAL</span>\n  </div>\n  <div class=\"ccard\">\n    <div class=\"who\"><span class=\"hdl\">@mars.climbs · audience</span></div>\n    <div class=\"txt\">third creator I've seen with these this week 👀</div>\n    <span class=\"tag spike\">⚡ VELOCITY SPIKE</span>\n  </div>\n</div>\n<div class=\"cfeed\" style=\"margin-top:24px\">\n  <div class=\"ccol\" id=\"cc0\"></div><div class=\"ccol\" id=\"cc1\"></div><div class=\"ccol\" id=\"cc2\"></div>\n</div>",
-      "requiredIds": ["cc0", "cc1", "cc2"],
-      "initJs": "startCFeed();"
-    },
-    {
-      "name": "Investor card",
-      "blurb": "A bordered content block from the investor section — an uppercase orange .t title plus key-value rows or a paragraph. Shown inside a dark .vg wrapper so the title and text pick up the correct theme colors.",
-      "states": ["kv list", "paragraph"],
-      "html": "<div class=\"vg\">\n  <div class=\"vg-cards\">\n    <div class=\"vg-card\">\n      <div class=\"t\">Revenue model</div>\n      <div class=\"kv\"><span>Exchange membership</span><b>Annual</b></div>\n      <div class=\"kv\"><span>Seats</span><b>Per planner</b></div>\n      <div class=\"kv\"><span>Campaign credits</span><b>% of tranche</b></div>\n      <div class=\"kv\" style=\"border:none\"><span>MSR commitments</span><b>$15–50M / season</b></div>\n    </div>\n    <div class=\"vg-card\">\n      <div class=\"t\">The flywheel</div>\n      <p style=\"margin-top:12px\">More creators → better matches → better tranche results → bigger MSRs → more demand for creators. Every campaign trains the XRS model; the model is the switching cost. Both sides arrive for liquidity and stay for the score.</p>\n    </div>\n  </div>\n</div>",
-      "requiredIds": [],
-      "initJs": ""
-    },
-    {
-      "name": "Price tag",
-      "blurb": "The hanging price-tag component: a string and an offset accent slab behind a flat tag with a punch hole, title, XROSSWORLD logo lockup, URL row and a barcode bar. Wrapped in .vg so it hangs against the dark theme.",
-      "states": ["default"],
-      "html": "<div class=\"vg\">\n  <div class=\"vg-tagwrap\">\n    <div class=\"vg-orange\" aria-hidden=\"true\"></div>\n    <div class=\"vg-string\" aria-hidden=\"true\"></div>\n    <div class=\"vg-tag\">\n      <div class=\"vg-hole\" aria-hidden=\"true\"></div>\n      <div class=\"tl\">A $32.5B market,<br>still traded over email.</div>\n      <div class=\"lg\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 3L21 21M21 3L3 21\" stroke=\"#020617\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg>XROSSWORLD</div>\n      <div class=\"url\"><span>www.xrossworld.exchange</span><span aria-hidden=\"true\">↗</span></div>\n      <div class=\"vg-bar\" aria-hidden=\"true\"></div>\n    </div>\n  </div>\n</div>",
-      "requiredIds": [],
-      "initJs": ""
-    },
-    {
-      "name": "Stat card",
-      "blurb": "A glass-shell statistic card: a big mono .num with a highlighted <em> figure (re-themed to a neon-yellow marker swatch) over a small descriptive .lbl.",
-      "states": ["em leads", "em trails", "em inline"],
-      "html": "<div class=\"shell\"><div class=\"inner stat\"><div class=\"num\"><em>3.7×</em></div><div class=\"lbl\">Better ROI reported with AI-matched creator selection vs. manual picks (Influencer Marketing Hub, 2025)</div></div></div>",
-      "requiredIds": [],
-      "initJs": ""
-    },
-    {
-      "name": "Agent face card",
-      "blurb": "A face-picker tile from the AI agent row: a monogram .face avatar, the agent .nm name and a .role caption. Lives inside an .agents flex row. The CSS still ships even though the picker was removed from the live flow.",
-      "states": ["default"],
-      "html": "<div class=\"agents\">\n  <div class=\"agent\">\n    <div class=\"face\">XS</div>\n    <div class=\"nm\">XRS Scout</div>\n    <div class=\"role\">Matching agent</div>\n  </div>\n  <div class=\"agent\">\n    <div class=\"face\">BR</div>\n    <div class=\"nm\">Brief</div>\n    <div class=\"role\">Creative agent</div>\n  </div>\n  <div class=\"agent\">\n    <div class=\"face\">RB</div>\n    <div class=\"nm\">Rebalance</div>\n    <div class=\"role\">Portfolio agent</div>\n  </div>\n</div>",
-      "requiredIds": [],
-      "initJs": ""
-    }
-  ]
+ "categoryId": "cards",
+ "category": "Profile & Data Cards",
+ "blurb": "Roster, comment, investor, price-tag, stat and agent cards \u2014 the flat white surfaces with hard navy offset shadows that carry every profile and data block on the site.",
+ "components": [
+  {
+   "name": "Roster card",
+   "blurb": "A single creator-position card from the campaign roster: duotoned photo avatar, handle, follower meta and XRS score. Driven by a CSS class for its anchor and picked states; tapping the live card toggles .picked.",
+   "states": [
+    "default",
+    "anchor",
+    "picked"
+   ],
+   "html": "<div class=\"roster\">\n  <button class=\"card-c\" onclick=\"this.classList.toggle('picked')\">\n    <div class=\"pf pf-photo\"><img src=\"faces/f1.jpg\" alt=\"\" loading=\"lazy\"></div>\n    <div class=\"h\">@rio.climbs</div>\n    <div class=\"meta\">62K</div>\n    <div class=\"xrs\">XRS 91</div>\n  </button>\n  <button class=\"card-c anchor\" onclick=\"this.classList.toggle('picked')\">\n    <div class=\"pf pf-photo\"><img src=\"faces/f2.jpg\" alt=\"\" loading=\"lazy\"></div>\n    <div class=\"h\">@northstar.maya</div>\n    <div class=\"meta\">1.1M</div>\n    <div class=\"xrs\">XRS 84</div>\n  </button>\n  <button class=\"card-c picked\" onclick=\"this.classList.toggle('picked')\">\n    <div class=\"pf pf-photo\"><img src=\"faces/f3.jpg\" alt=\"\" loading=\"lazy\"></div>\n    <div class=\"h\">@koa.builds</div>\n    <div class=\"meta\">28K</div>\n    <div class=\"xrs\">XRS 93</div>\n  </button>\n</div>",
+   "requiredIds": [],
+   "initJs": ""
+  },
+  {
+   "name": "Comment card",
+   "blurb": "A live-feed comment chip: audience handle, the comment text and a sentiment tag. The tag comes in three CSS-driven variants \u2014 positive, watch (intent) and spike (velocity). Includes the live three-column scrolling feed.",
+   "states": [
+    "tag (positive)",
+    "tag.watch (intent)",
+    "tag.spike (velocity)",
+    "live feed"
+   ],
+   "html": "<div style=\"display:grid;grid-template-columns:1fr;gap:12px;max-width:320px\">\n  <div class=\"ccard\">\n    <div class=\"who\"><span class=\"hdl\">@rio.climbs \u00b7 audience</span></div>\n    <div class=\"txt\">been waiting for someone honest about sizing. ordering the 9.5</div>\n    <span class=\"tag\">\u25b2 POSITIVE</span>\n  </div>\n  <div class=\"ccard\">\n    <div class=\"who\"><span class=\"hdl\">@vega.gardens \u00b7 audience</span></div>\n    <div class=\"txt\">genuine question \u2014 do these hold up in rain? asking before I buy</div>\n    <span class=\"tag watch\">\u25ce INTENT SIGNAL</span>\n  </div>\n  <div class=\"ccard\">\n    <div class=\"who\"><span class=\"hdl\">@mars.climbs \u00b7 audience</span></div>\n    <div class=\"txt\">third creator I've seen with these this week \ud83d\udc40</div>\n    <span class=\"tag spike\">\u26a1 VELOCITY SPIKE</span>\n  </div>\n</div>\n<div class=\"cfeed\" style=\"margin-top:24px\">\n  <div class=\"ccol\" id=\"cc0\"></div><div class=\"ccol\" id=\"cc1\"></div><div class=\"ccol\" id=\"cc2\"></div>\n</div>",
+   "requiredIds": [
+    "cc0",
+    "cc1",
+    "cc2"
+   ],
+   "initJs": "startCFeed();"
+  },
+  {
+   "name": "Investor card",
+   "blurb": "A bordered content block from the investor section \u2014 an uppercase orange .t title plus key-value rows or a paragraph. Shown inside a dark .vg wrapper so the title and text pick up the correct theme colors.",
+   "states": [
+    "kv list",
+    "paragraph"
+   ],
+   "html": "<div class=\"vg\">\n  <div class=\"vg-cards\">\n    <div class=\"vg-card\">\n      <div class=\"t\">Revenue model</div>\n      <div class=\"kv\"><span>Exchange membership</span><b>Annual</b></div>\n      <div class=\"kv\"><span>Seats</span><b>Per planner</b></div>\n      <div class=\"kv\"><span>Campaign credits</span><b>% of tranche</b></div>\n      <div class=\"kv\" style=\"border:none\"><span>MSR commitments</span><b>$15\u201350M / season</b></div>\n    </div>\n    <div class=\"vg-card\">\n      <div class=\"t\">The flywheel</div>\n      <p style=\"margin-top:12px\">More creators \u2192 better matches \u2192 better tranche results \u2192 bigger MSRs \u2192 more demand for creators. Every campaign trains the XRS model; the model is the switching cost. Both sides arrive for liquidity and stay for the score.</p>\n    </div>\n  </div>\n</div>",
+   "requiredIds": [],
+   "initJs": ""
+  },
+  {
+   "name": "Price tag",
+   "blurb": "The hanging price-tag component: a string and an offset accent slab behind a flat tag with a punch hole, title, Orbital logo lockup, URL row and a barcode bar. Wrapped in .vg so it hangs against the dark theme.",
+   "states": [
+    "default"
+   ],
+   "html": "<div class=\"vg\">\n  <div class=\"vg-tagwrap\">\n    <div class=\"vg-orange\" aria-hidden=\"true\"></div>\n    <div class=\"vg-string\" aria-hidden=\"true\"></div>\n    <div class=\"vg-tag\">\n      <div class=\"vg-hole\" aria-hidden=\"true\"></div>\n      <div class=\"tl\">One system,<br>every surface.</div>\n      <div class=\"lg\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><ellipse cx=\"12\" cy=\"12\" rx=\"10.4\" ry=\"3.8\" transform=\"rotate(32 12 12)\" stroke=\"#020617\" stroke-width=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"2.8\" fill=\"#020617\"/></svg>ORBITAL</div>\n      <div class=\"url\"><span>www.orbital.design</span><span aria-hidden=\"true\">\u2197</span></div>\n      <div class=\"vg-bar\" aria-hidden=\"true\"></div>\n    </div>\n  </div>\n</div>",
+   "requiredIds": [],
+   "initJs": ""
+  },
+  {
+   "name": "Stat card",
+   "blurb": "A glass-shell statistic card: a big mono .num with a highlighted <em> figure (re-themed to a neon-yellow marker swatch) over a small descriptive .lbl.",
+   "states": [
+    "em leads",
+    "em trails",
+    "em inline"
+   ],
+   "html": "<div class=\"shell\"><div class=\"inner stat\"><div class=\"num\"><em>3.7\u00d7</em></div><div class=\"lbl\">Better ROI reported with AI-matched creator selection vs. manual picks (Influencer Marketing Hub, 2025)</div></div></div>",
+   "requiredIds": [],
+   "initJs": ""
+  },
+  {
+   "name": "Agent face card",
+   "blurb": "A face-picker tile from the AI agent row: a monogram .face avatar, the agent .nm name and a .role caption. Lives inside an .agents flex row. The CSS still ships even though the picker was removed from the live flow.",
+   "states": [
+    "default"
+   ],
+   "html": "<div class=\"agents\">\n  <div class=\"agent\">\n    <div class=\"face\">XS</div>\n    <div class=\"nm\">XRS Scout</div>\n    <div class=\"role\">Matching agent</div>\n  </div>\n  <div class=\"agent\">\n    <div class=\"face\">BR</div>\n    <div class=\"nm\">Brief</div>\n    <div class=\"role\">Creative agent</div>\n  </div>\n  <div class=\"agent\">\n    <div class=\"face\">RB</div>\n    <div class=\"nm\">Rebalance</div>\n    <div class=\"role\">Portfolio agent</div>\n  </div>\n</div>",
+   "requiredIds": [],
+   "initJs": ""
+  }
+ ]
 }
