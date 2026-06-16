@@ -1,0 +1,39 @@
+{
+  "categoryId": "campaign",
+  "category": "Campaign Management",
+  "blurb": "Retro/terminal control surfaces for running and tuning campaigns across desktop and mobile, from a mission-control deck to a creator-side console, stage tabs and live telemetry meters.",
+  "components": [
+    {
+      "name": "Mission control",
+      "blurb": "A brushed-metal mission-control deck with a live clock, a dot-matrix campaign-state canvas, an operation log, and three macro sliders that rebalance the network on input.",
+      "states": ["live"],
+      "html": "<div class=\"qc-shell\"><div class=\"qc\">\n  <div class=\"qc-top\">\n    <div><div class=\"qc-day\">FITWEAR-Q3 · TRANCHE 2/6</div><div class=\"qc-time\" id=\"qcClock\">22:41<sup id=\"qcSec\">07</sup></div></div>\n    <div style=\"text-align:right\"><div class=\"qc-day\">NETWORK</div><div style=\"font-size:18px; font-weight:400\">41 LIVE</div></div>\n  </div>\n  <div class=\"qc-grid\">\n    <div class=\"qc-matrix\"><div class=\"cap\">X_CORE // CAMPAIGN_STATE</div><canvas id=\"qcCanvas\"></canvas></div>\n    <div class=\"qc-log\"><div class=\"cap\">OPERATION LOGS</div><div id=\"qcLog\"></div></div>\n  </div>\n  <div class=\"qc-bar\">\n    <div class=\"cap\"><span>NETWORK MACROS — LIVE</span><span class=\"prt\">TRX 02</span></div>\n    <div class=\"qc-sliders\">\n      <div class=\"qs\"><label>PACE <b id=\"vPace\">62%</b></label><input type=\"range\" min=\"0\" max=\"100\" value=\"62\" oninput=\"qcTune('PACE',this.value,'vPace')\" aria-label=\"Spend pace\"></div>\n      <div class=\"qs\"><label>RISK <b id=\"vRisk\">34%</b></label><input type=\"range\" min=\"0\" max=\"100\" value=\"34\" oninput=\"qcTune('RISK',this.value,'vRisk')\" aria-label=\"Risk appetite\"></div>\n      <div class=\"qs\"><label>REACH <b id=\"vReach\">71%</b></label><input type=\"range\" min=\"0\" max=\"100\" value=\"71\" oninput=\"qcTune('REACH',this.value,'vReach')\" aria-label=\"Reach vs resonance\"></div>\n    </div>\n    <div class=\"qc-status\" id=\"qcStatus\">ALL POSITIONS NOMINAL. HOLDING.</div>\n  </div>\n</div></div>",
+      "requiredIds": ["qcClock", "qcSec", "qcCanvas", "qcLog", "vPace", "vRisk", "vReach", "qcStatus"],
+      "initJs": "startQC();"
+    },
+    {
+      "name": "Creator console",
+      "blurb": "A soft-plastic creator-side device: a turnable status dial, an LCD earnings readout, a week strip, and a manual/auto-pitch toggle that hands briefs to the agent.",
+      "states": ["default"],
+      "html": "<div class=\"atm\"><div class=\"atm-grid\">\n  <div class=\"atm-zone\">\n    <button class=\"atm-dial\" onclick=\"atmCycle()\" aria-label=\"Cycle campaign status\">\n      <span class=\"rot\" id=\"atmRot\" style=\"transform:rotate(0deg)\"><span class=\"ptr\"></span></span>\n      <span class=\"hub\"></span>\n    </button>\n    <div class=\"atm-cap\">CURRENT STATUS<b id=\"atmStatus\">In production</b></div>\n  </div>\n  <div class=\"atm-zone\">\n    <div class=\"atm-lcd\">\n      <div>NODE-92.XRS&nbsp;&nbsp;<span class=\"sync\">● SYNC</span></div>\n      <div style=\"margin-top:8px\">CAMPAIGN EARNINGS</div>\n      <div class=\"big\" id=\"atmBig\">$1,240</div>\n      <div class=\"duo\"><div>NEXT DUE<br><b id=\"atmA\" style=\"font-weight:500\">FIELD TEST</b></div><div>QUEUE<br><b id=\"atmB\" style=\"font-weight:500\">3 INVITES</b></div></div>\n    </div>\n  </div>\n  <div class=\"atm-zone\">\n    <div class=\"atm-week\">\n      <div>M<b>—</b></div><div>T<b>SHOOT</b></div><div class=\"due\">W<b>DUE</b></div><div>T<b>—</b></div><div>F<b>PAID</b></div>\n    </div>\n    <div class=\"atm-tgl-row\"><span id=\"atmManual\">MANUAL</span>\n      <button class=\"atm-tgl on\" id=\"atmTgl\" onclick=\"atmToggle()\" aria-label=\"Toggle auto-pitch\"><i></i></button>\n      <span class=\"lit\" id=\"atmAuto\">AUTO<span class=\"pitch-sfx\">-PITCH</span></span></div>\n    <div class=\"atm-cap\" style=\"font-size:10px\" id=\"atmHint\">AGENT IS PITCHING YOU INTO 3 OPEN BRIEFS</div>\n  </div>\n</div></div>",
+      "requiredIds": ["atmRot", "atmStatus", "atmBig", "atmA", "atmB", "atmTgl", "atmManual", "atmAuto", "atmHint"],
+      "initJs": ""
+    },
+    {
+      "name": "Stage tabs & report",
+      "blurb": "A pill tab row (Roster / Launch / Monitor / Report) over a swappable stage body, each tab repainting the campaign view in place.",
+      "states": ["roster active"],
+      "html": "<div id=\"sim-area\">\n  <div class=\"shell\"><div class=\"inner\">\n    <div style=\"display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:20px\">\n      <h3 id=\"sim-title\">Your portfolio</h3>\n      <div class=\"stages\" role=\"tablist\">\n        <button class=\"active\" onclick=\"stage(this,'roster')\">Roster</button>\n        <button onclick=\"stage(this,'launch')\">Launch</button>\n        <button onclick=\"stage(this,'monitor')\">Monitor</button>\n        <button onclick=\"stage(this,'report')\">Report</button>\n      </div>\n    </div>\n    <div id=\"stage-body\"></div>\n  </div></div>\n</div>",
+      "requiredIds": ["sim-area", "sim-title", "stage-body"],
+      "initJs": "mkRoster(); document.getElementById('stage-body').innerHTML=rosterHTML();"
+    },
+    {
+      "name": "Telemetry meters",
+      "blurb": "A dark telemetry card with match-latency, fill-rate and XRS-drift meters, an AutoDeploy switch, and a streaming exchange terminal log.",
+      "states": ["live"],
+      "html": "<div class=\"ae\"><div class=\"ae-duo\">\n  <div class=\"ae-card ae-tele\">\n    <div style=\"display:flex; justify-content:space-between\"><span class=\"ae-lbl\" style=\"color:#fff\">Telemetry data</span><span class=\"ae-lbl\">▥</span></div>\n    <div class=\"row\"><span>Match latency</span><b id=\"tLat\">38ms</b></div><div class=\"meter\"><i id=\"mLat\" style=\"width:24%\"></i></div>\n    <div class=\"row\"><span>Fill rate</span><b id=\"tFill\">96.2%</b></div><div class=\"meter\"><i id=\"mFill\" style=\"width:96%\"></i></div>\n    <div class=\"row\"><span>XRS drift</span><b id=\"tDrift\">+0.4</b></div><div class=\"meter\"><i id=\"mDrift\" style=\"width:54%\"></i></div>\n    <div class=\"ae-tgl\"><span class=\"ae-lbl\">AutoDeploy</span><button class=\"ae-sw\" id=\"aeSw\" onclick=\"this.classList.toggle('off')\" aria-label=\"Toggle AutoDeploy\"><i></i></button></div>\n  </div>\n  <div class=\"ae-term\" id=\"aeTerm\"><div>&gt; INITIATING HANDSHAKE</div><div>&gt; TUNNEL <b>SECURE</b></div></div>\n</div></div>",
+      "requiredIds": ["tLat", "mLat", "tFill", "mFill", "tDrift", "mDrift", "aeSw", "aeTerm"],
+      "initJs": "aeTele(false);"
+    }
+  ]
+}

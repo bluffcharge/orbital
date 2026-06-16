@@ -1,0 +1,31 @@
+{
+  "categoryId": "chat",
+  "category": "Chat, Agents & Scoring",
+  "blurb": "The conversational buyer-desk surfaces: a two-pane AI chat thread with a hand-noted desk panel, the message-bubble primitives that thread is built from, and the creator XRS resonance-scoring panel with its live ingest log and animated score ring.",
+  "components": [
+    {
+      "name": "Chat thread",
+      "blurb": "Two-pane AI buyer desk: a scrolling chat log with a suggestion-chip row on the left, and a live hand-written 'desk notes' panel on the right that the agent annotates as the conversation proceeds.",
+      "states": ["empty (populate via JS primitives)"],
+      "html": "<div class=\"chat-shell\">\n  <div class=\"shell\"><div class=\"inner chat\">\n    <div class=\"chat-log\" id=\"chatlog\" aria-live=\"polite\"></div>\n    <div class=\"chips-row\" id=\"chips\"></div>\n  </div></div>\n  <div class=\"shell\"><div class=\"inner\">\n    <div class=\"notes-title\">✎ Desk notes — listening</div>\n    <div class=\"notes\" id=\"notes\"></div>\n  </div></div>\n</div>",
+      "requiredIds": ["chatlog", "chips", "notes"],
+      "initJs": ""
+    },
+    {
+      "name": "Message bubbles",
+      "blurb": "Static one-off instances documenting the bubble primitives: an agent message (avatar + bubble), a user message (.msg.me, reversed with yellow bubble), and an animated three-dot typing indicator. These render purely from the orbital CSS without any JS.",
+      "states": ["agent message", "user message (.me)", "typing indicator"],
+      "html": "<div class=\"chat-log\" style=\"gap:14px\">\n  <div class=\"msg\"><div class=\"av\">N</div><div class=\"bubble\">Hey — Nova here, your desk for today. No forms, promise. What are we trying to move?</div></div>\n  <div class=\"msg me\"><div class=\"av\">You</div><div class=\"bubble\">Sell a product drop</div></div>\n  <div class=\"msg\"><div class=\"av\">N</div><div class=\"bubble typing\"><i></i><i></i><i></i></div></div>\n</div>",
+      "requiredIds": [],
+      "initJs": ""
+    },
+    {
+      "name": "XRS score ring + ingest",
+      "blurb": "Creator qualify panel: a handle input + Run button that streams a simulated ingest log line-by-line into .ingest, then draws an animated XRS resonance score ring (SVG circle stroke-dashoffset) plus an estimated booking range into the score-card container.",
+      "states": ["default (runs @trailmixtape on load)"],
+      "html": "<div class=\"grid2\">\n  <div class=\"shell\"><div class=\"inner\">\n    <h3>Check your handle</h3>\n    <p class=\"dim\" style=\"font-size:13px; margin:10px 0 18px\">Enter any public handle. We simulate the ingest your profile would get on the live exchange.</p>\n    <div style=\"display:flex; gap:10px; flex-wrap:wrap\">\n      <input id=\"handle\" placeholder=\"@yourhandle\" style=\"flex:1; min-width:180px\" autocomplete=\"off\">\n      <button class=\"btn btn-primary\" onclick=\"qualify()\">Run it</button>\n    </div>\n    <div class=\"ingest\" id=\"ingest\" style=\"margin-top:20px\"></div>\n  </div></div>\n  <div class=\"shell\"><div class=\"inner\" id=\"score-card\" style=\"min-height:280px\">\n    <div class=\"eyebrow\">XRS™ Resonance</div>\n    <p class=\"dim\" style=\"font-size:13px; margin:10px 0 14px\">One number for how hard your audience actually listens — reply rate, audience penetration, consistency of reach, sentiment quality. Run your handle and your score draws here.</p>\n  </div></div>\n</div>",
+      "requiredIds": ["handle", "ingest", "score-card"],
+      "initJs": "document.getElementById('handle').value='@trailmixtape'; qualify();"
+    }
+  ]
+}

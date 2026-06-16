@@ -1,0 +1,64 @@
+{
+ "categoryId": "motion",
+ "category": "Globes & Motion",
+ "blurb": "Canvas-driven background and data-viz pieces \u2014 the rotating match globe, the resonance exchange emitter, the hero perspective lattice, and the scrolling ticker.",
+ "components": [
+  {
+   "name": "Match globe",
+   "blurb": "Rotating wireframe globe of creator nodes with budget-clearing arcs and a live azimuth HUD, drawn on a canvas.",
+   "states": [
+    "live"
+   ],
+   "html": "<div class=\"ae\">\n  <div class=\"ae-card\">\n    <div style=\"display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap\">\n      <div><div class=\"ae-h\">Global Match Matrix</div>\n      <p class=\"ae-sub\">Observe the exchange in real time. Creator nodes are synchronized across the network; arcs fire as budget clears against resonance.</p></div>\n      <span class=\"ae-rel\">rel-2.0</span>\n    </div>\n    <div class=\"ae-globewrap\">\n      <canvas id=\"globe\"></canvas>\n      <div class=\"ae-hud\" style=\"top:14px; left:16px\">Match_loss:<br><b>0.00%</b></div>\n      <div class=\"ae-hud\" style=\"top:14px; right:16px\">Allocating_budget</div>\n      <div class=\"ae-hud\" style=\"bottom:14px; left:16px\">Azimuth: <b id=\"aeAz\">0\u00b0</b></div>\n      <div class=\"ae-hud\" style=\"bottom:14px; right:16px\">Elevation: <b>-15\u00b0</b></div>\n    </div>\n    <div class=\"ae-status ae-lbl\"><span>Connection_secure</span><span>\u00b7</span><span>Live_state</span><span>\u00b7</span><span id=\"aeWatch\">Watching</span></div>\n  </div>\n  <!-- telemetry sinks the globe loop writes to via aeTele(); kept offscreen so startGlobe() never throws -->\n  <div style=\"position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap\" aria-hidden=\"true\">\n    <b id=\"tLat\">38ms</b><i id=\"mLat\"></i>\n    <b id=\"tFill\">96.2%</b><i id=\"mFill\"></i>\n    <b id=\"tDrift\">+0.4</b><i id=\"mDrift\"></i>\n    <div id=\"aeTerm\"></div>\n  </div>\n</div>",
+   "requiredIds": [
+    "globe",
+    "aeAz",
+    "aeWatch",
+    "tLat",
+    "mLat",
+    "tFill",
+    "mFill",
+    "tDrift",
+    "mDrift",
+    "aeTerm"
+   ],
+   "initJs": "startGlobe();"
+  },
+  {
+   "name": "Resonance emitter",
+   "blurb": "Dark padded canvas showing the pinched match-flow band from creators to campaign and the return resonance-signal arcs, with a legend.",
+   "states": [
+    "live"
+   ],
+   "html": "<div style=\"width:100%\"><div style=\"width:100%;box-sizing:border-box;background:#020617;border:1px solid #CBD5E1;padding:8px\"><canvas id=\"xchg\" style=\"width:100%;display:block\"></canvas></div><div class=\"ix-legend\"><span><i></i>MATCH FLOW</span><span class=\"ret\"><i></i>RESONANCE SIGNAL</span></div></div>",
+   "requiredIds": [
+    "xchg"
+   ],
+   "initJs": "setTimeout(function(){startXchg();},400);"
+  },
+  {
+   "name": "Perspective lattice",
+   "blurb": "The hero background grid \u2014 a breathing perspective lattice with pointer-drift, drawn continuously on a canvas.",
+   "states": [
+    "auto"
+   ],
+   "html": "<div style=\"position:relative;height:240px;width:100%;overflow:hidden;background:#020617;border:1px solid var(--hairline-2)\"><canvas id=\"lattice\"></canvas></div>",
+   "requiredIds": [
+    "lattice"
+   ],
+   "initJs": ""
+  },
+  {
+   "name": "Ticker",
+   "blurb": "Horizontally scrolling marquee of live match and tranche events; the script fills the track at load.",
+   "states": [
+    "auto"
+   ],
+   "html": "<div class=\"ticker\" aria-hidden=\"true\"><div class=\"ticker-track\" id=\"ticker\"></div></div>",
+   "requiredIds": [
+    "ticker"
+   ],
+   "initJs": ""
+  }
+ ]
+}

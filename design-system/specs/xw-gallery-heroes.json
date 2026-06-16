@@ -1,0 +1,31 @@
+{
+  "categoryId": "heroes",
+  "category": "Heroes",
+  "blurb": "Large landing modules — the split-video hero with the XROSSWORLD wordmark, the elite-agency grid wall, and the brand logo lockup.",
+  "components": [
+    {
+      "name": "Split video hero",
+      "blurb": "Two-panel landing hero: For Buyers / For Creators panels each with a duotoned looping video, a gradient art fallback layer, a shade, and a white pill label, plus the centered split-color XROSSWORLD wordmark.",
+      "states": ["Buyers panel (.panel-b)", "Creators panel (.panel-c)"],
+      "html": "<div style=\"position:relative; height:520px; overflow:hidden\">\n  <div class=\"hero-split\">\n    <a class=\"panel panel-b\" href=\"#buyers\" onclick=\"return false\">\n      <div class=\"art\"></div>\n      <video src=\"hero-buyers.mp4\" autoplay muted loop playsinline preload=\"auto\" disablepictureinpicture onerror=\"this.remove()\" aria-hidden=\"true\"></video>\n      <div class=\"panel-shade\"></div>\n      <div class=\"panel-lbl\">\n        <span class=\"k\">Agency trading desks · brand budgets</span>\n        <span class=\"pill-w\">For Buyers <span aria-hidden=\"true\">→</span></span>\n      </div>\n    </a>\n    <a class=\"panel panel-c\" href=\"#creators\" onclick=\"return false\">\n      <div class=\"art\"></div>\n      <video src=\"hero-creators.mp4\" autoplay muted loop playsinline preload=\"auto\" disablepictureinpicture onerror=\"this.remove()\" aria-hidden=\"true\"></video>\n      <div class=\"panel-shade\"></div>\n      <div class=\"panel-lbl\">\n        <span class=\"k\">Every size of voice · represented</span>\n        <span class=\"pill-w\">For Creators <span aria-hidden=\"true\">→</span></span>\n      </div>\n    </a>\n    <div class=\"hero-word\"><span>XROSSWORLD</span></div>\n  </div>\n</div>",
+      "requiredIds": [],
+      "initJs": ""
+    },
+    {
+      "name": "Agency grid",
+      "blurb": "Elite-agency wall: a 6-column grid mixing a navy STA/BLE logo cell, duotoned face photos, and neon-yellow cells, with the 'A next-gen talent agency' headline overlaid.",
+      "states": [],
+      "html": "<div class=\"sgrid\" role=\"img\" aria-label=\"A next-gen talent agency — the XROSSWORLD stable\">\n  <div class=\"sg\" aria-hidden=\"true\">\n    <div class=\"lg\"><span>STA<br>BLE</span></div>\n    <div class=\"m-hide\"></div>\n    <div class=\"m-hide\"></div>\n    <div class=\"m-hide\"></div>\n    <div class=\"m-hide\"></div>\n    <div class=\"ph\"><img src=\"faces/f2.jpg\" alt=\"\" loading=\"lazy\"></div>\n    <div></div>\n    <div class=\"ph\"><img src=\"faces/f5.jpg\" alt=\"\" loading=\"lazy\"></div>\n    <div class=\"m-hide\"></div>\n    <div class=\"yl\"></div>\n    <div class=\"m-hide\"></div>\n    <div></div>\n    <div class=\"m-hide\"></div>\n    <div></div>\n    <div class=\"m-hide\"></div>\n    <div class=\"m-hide\"></div>\n    <div class=\"ph\"><img src=\"faces/f7.jpg\" alt=\"\" loading=\"lazy\"></div>\n    <div></div>\n    <div class=\"yl\"></div>\n    <div class=\"m-hide\"></div>\n    <div class=\"ph\"><img src=\"faces/f9.jpg\" alt=\"\" loading=\"lazy\"></div>\n    <div></div>\n    <div class=\"m-hide\"></div>\n    <div class=\"m-hide\"></div>\n  </div>\n  <div class=\"sg-head\"><span>A next-gen</span><br><span>talent <em>agency</em></span></div>\n</div>",
+      "requiredIds": [],
+      "initJs": ""
+    },
+    {
+      "name": "Wordmark",
+      "blurb": "The XROSSWORLD logo lockup — the neon-yellow X mark SVG with a navy center node, followed by the XROSSWORLD wordmark.",
+      "states": [],
+      "html": "<button class=\"logo\" onclick=\"go('home')\" aria-label=\"XROSSWORLD home\">\n  <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n    <path d=\"M3 3L21 21M21 3L3 21\" stroke=\"#E6FF00\" stroke-width=\"2.6\" stroke-linecap=\"round\"/>\n    <circle cx=\"12\" cy=\"12\" r=\"2.4\" fill=\"#020617\" stroke=\"#E6FF00\" stroke-width=\"1.4\"/>\n  </svg>\n  XROSSWORLD\n</button>",
+      "requiredIds": [],
+      "initJs": ""
+    }
+  ]
+}

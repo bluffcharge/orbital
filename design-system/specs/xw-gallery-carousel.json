@@ -1,0 +1,15 @@
+{
+  "categoryId": "carousel",
+  "category": "Carousel & Selection",
+  "blurb": "The selection-review deck where drafted candidate cards stack in 3D and advance one at a time on Pass / Approve.",
+  "components": [
+    {
+      "name": "Selection deck",
+      "blurb": "The .nx selection-review module: a framed stage where candidate cards stack in perspective, with Pass / Approve controls that fly the front card off and slide the next forward; the JS builds and renders all cards into #nxStage.",
+      "states": ["default (deck populated by nxBuild)"],
+      "html": "<div class=\"nx\">\n  <div class=\"nx-frame\"></div>\n  <div class=\"nx-cap\">Selection grid engaged</div>\n  <div class=\"nx-stage\" id=\"nxStage\"></div>\n  <div class=\"nx-ui\">\n    <button class=\"nx-btn nx-pass\" onclick=\"nxAdvance(false)\">Pass</button>\n    <button class=\"nx-btn nx-ok\" onclick=\"nxAdvance(true)\">Approve &rarr;</button>\n  </div>\n  <div class=\"nx-count\" id=\"nxCount\"></div>\n  <div class=\"nx-cap\" style=\"margin-top:18px\">X-12 &nbsp;&nbsp; C-88</div>\n</div>",
+      "requiredIds": ["nxStage", "nxCount"],
+      "initJs": "nxBuild();"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+ "categoryId": "foundations",
+ "category": "Foundations",
+ "blurb": "The raw design tokens, type scale, surfaces, buttons, inputs and feedback primitives that the Orbital Access Pass theme is built from.",
+ "components": [
+  {
+   "name": "Color tokens",
+   "blurb": "The Orbital :root palette \u2014 navy ground, neon-yellow accent, white surface, slate text ramp and hairlines.",
+   "states": [
+    "palette"
+   ],
+   "html": "<div style=\"display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',sans-serif\">\n  <div><div style=\"height:64px;background:#020617;border:1px solid #CBD5E1\"></div><div style=\"font-size:12px;color:#020617;margin-top:6px;font-weight:500\">--bg</div><div style=\"font-size:11px;color:#64748B\">#020617</div></div>\n  <div><div style=\"height:64px;background:#E6FF00;border:1px solid #CBD5E1\"></div><div style=\"font-size:12px;color:#020617;margin-top:6px;font-weight:500\">--accent</div><div style=\"font-size:11px;color:#64748B\">#E6FF00</div></div>\n  <div><div style=\"height:64px;background:#E6FF00;border:1px solid #CBD5E1\"></div><div style=\"font-size:12px;color:#020617;margin-top:6px;font-weight:500\">--good</div><div style=\"font-size:11px;color:#64748B\">#E6FF00</div></div>\n  <div><div style=\"height:64px;background:#E6FF00;border:1px solid #CBD5E1\"></div><div style=\"font-size:12px;color:#020617;margin-top:6px;font-weight:500\">--bad</div><div style=\"font-size:11px;color:#64748B\">#E6FF00</div></div>\n  <div><div style=\"height:64px;background:#FFFFFF;border:1px solid #CBD5E1\"></div><div style=\"font-size:12px;color:#020617;margin-top:6px;font-weight:500\">--txt-hi / surface</div><div style=\"font-size:11px;color:#64748B\">#FFFFFF</div></div>\n  <div><div style=\"height:64px;background:#CBD5E1;border:1px solid #CBD5E1\"></div><div style=\"font-size:12px;color:#020617;margin-top:6px;font-weight:500\">--txt</div><div style=\"font-size:11px;color:#64748B\">#CBD5E1</div></div>\n  <div><div style=\"height:64px;background:#94A3B8;border:1px solid #CBD5E1\"></div><div style=\"font-size:12px;color:#020617;margin-top:6px;font-weight:500\">--txt-dim</div><div style=\"font-size:11px;color:#64748B\">#94A3B8</div></div>\n  <div><div style=\"height:64px;background:#0F172A;border:1px solid #CBD5E1\"></div><div style=\"font-size:12px;color:#020617;margin-top:6px;font-weight:500\">--indigo / shadow</div><div style=\"font-size:11px;color:#64748B\">#0F172A</div></div>\n  <div><div style=\"height:64px;background:#FFFFFF;border:1px solid #CBD5E1\"></div><div style=\"font-size:12px;color:#020617;margin-top:6px;font-weight:500\">surface</div><div style=\"font-size:11px;color:#64748B\">#FFFFFF</div></div>\n  <div><div style=\"height:64px;background:rgba(203,213,225,.35);border:1px solid #CBD5E1\"></div><div style=\"font-size:12px;color:#020617;margin-top:6px;font-weight:500\">--hairline</div><div style=\"font-size:11px;color:#64748B\">rgba(203,213,225,.35)</div></div>\n  <div><div style=\"height:64px;background:rgba(203,213,225,.14);border:1px solid #CBD5E1\"></div><div style=\"font-size:12px;color:#020617;margin-top:6px;font-weight:500\">--hairline-2</div><div style=\"font-size:11px;color:#64748B\">rgba(203,213,225,.14)</div></div>\n</div>",
+   "requiredIds": [],
+   "initJs": ""
+  },
+  {
+   "name": "Type scale",
+   "blurb": "Specimens for every text role \u2014 headings, body, eyebrow, mono and the notes-title micro-label.",
+   "states": [
+    "h1",
+    "h2",
+    "h3",
+    "p",
+    "eyebrow",
+    "mono",
+    "notes-title"
+   ],
+   "html": "<div style=\"display:flex;flex-direction:column;gap:14px\"><h1>Aa \u2014 Display H1</h1><h2>Aa \u2014 Heading H2</h2><h3>Aa \u2014 Subhead H3</h3><p>Body copy \u2014 the exchange prices you on what the data actually shows: reply rate, penetration, consistency of reach.</p><div class=\"eyebrow\">EYEBROW \u00b7 SECTION LABEL</div><div class=\"notes-title\">NOTES-TITLE MICRO LABEL</div><span class=\"mono\" style=\"color:var(--txt-hi)\">MONO / TABULAR 1234.56</span></div>",
+   "requiredIds": [],
+   "initJs": ""
+  },
+  {
+   "name": "Radii & shadow",
+   "blurb": "The square-corner radius (2px small, 0 elsewhere) and the signature hard 4px offset shadow.",
+   "states": [
+    "radius 2px",
+    "radius 0",
+    "hard shadow 4px 4px 0"
+   ],
+   "html": "<div style=\"display:flex;gap:32px;flex-wrap:wrap;align-items:flex-end;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',sans-serif\">\n  <div style=\"text-align:center\">\n    <div style=\"width:120px;height:90px;background:#FFFFFF;border:1px solid #CBD5E1;border-radius:2px\"></div>\n    <div style=\"font-size:12px;color:#020617;margin-top:10px;font-weight:500\">--r-sm</div>\n    <div style=\"font-size:11px;color:#64748B\">2px</div>\n  </div>\n  <div style=\"text-align:center\">\n    <div style=\"width:120px;height:90px;background:#FFFFFF;border:1px solid #CBD5E1;border-radius:0\"></div>\n    <div style=\"font-size:12px;color:#020617;margin-top:10px;font-weight:500\">--r-md / --r-lg</div>\n    <div style=\"font-size:11px;color:#64748B\">0px</div>\n  </div>\n  <div style=\"text-align:center\">\n    <div style=\"width:120px;height:90px;background:#FFFFFF;border:1px solid #CBD5E1;border-radius:0;box-shadow:4px 4px 0 0 #0F172A\"></div>\n    <div style=\"font-size:12px;color:#020617;margin-top:14px;font-weight:500\">hard shadow</div>\n    <div style=\"font-size:11px;color:#64748B\">4px 4px 0 0 #0F172A</div>\n  </div>\n</div>",
+   "requiredIds": [],
+   "initJs": ""
+  },
+  {
+   "name": "Buttons",
+   "blurb": "Every button and pill variant in the Orbital theme \u2014 driven entirely by CSS class, no JS required.",
+   "states": [
+    ".btn.btn-primary",
+    ".btn.btn-ghost (on navy)",
+    ".btn-navy",
+    ".btn-ghost inside white card",
+    ".pill-w",
+    ".panel-c .pill-w",
+    ".vg-pill",
+    ".echo-cta",
+    ".ae-cta",
+    ".ae-init",
+    ".nx-btn.nx-pass",
+    ".nx-btn.nx-ok",
+    ".chip"
+   ],
+   "html": "<div style=\"display:flex;flex-direction:column;gap:24px\">\n  <div style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:center\">\n    <button class=\"btn btn-primary\">I deploy budget \u2192</button>\n    <button class=\"btn btn-navy\">See if you qualify</button>\n    <span class=\"pill-w\">For Buyers <span aria-hidden=\"true\">\u2192</span></span>\n  </div>\n  <div class=\"panel-c\" style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:center\">\n    <span class=\"pill-w\">For Creators <span aria-hidden=\"true\">\u2192</span></span>\n    <button class=\"vg-pill\">Request access \u2197</button>\n    <button class=\"echo-cta\">Accept invitation \u2197</button>\n    <button class=\"ae-cta\">Open the exchange \u2192</button>\n    <button class=\"ae-init\">Initiate</button>\n  </div>\n  <div style=\"background:#020617;border:1px solid #CBD5E1;padding:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center\">\n    <button class=\"btn btn-ghost\">Watch the exchange \u2192</button>\n    <button class=\"nx-btn nx-pass\">Pass</button>\n    <button class=\"nx-btn nx-ok\">Approve \u2192</button>\n  </div>\n  <div class=\"shell\"><div class=\"inner\" style=\"display:flex;gap:12px;flex-wrap:wrap;align-items:center\">\n    <button class=\"btn btn-ghost\">Build a test campaign</button>\n    <button class=\"chip\">Beauty</button>\n    <button class=\"chip\">Fitness</button>\n  </div></div>\n</div>",
+   "requiredIds": [],
+   "initJs": ""
+  },
+  {
+   "name": "Inputs",
+   "blurb": "Text input and textarea \u2014 shown inside a shell card so the white-card override (dark text on white) applies.",
+   "states": [
+    "input",
+    "textarea"
+   ],
+   "html": "<div class=\"shell\"><div class=\"inner\">\n  <div class=\"eyebrow\">Form fields</div>\n  <div style=\"display:flex;flex-direction:column;gap:14px;margin-top:14px\">\n    <input placeholder=\"@yourhandle\" autocomplete=\"off\">\n    <textarea rows=\"3\" placeholder=\"Tell us about your campaign\u2026\"></textarea>\n  </div>\n</div></div>",
+   "requiredIds": [],
+   "initJs": ""
+  },
+  {
+   "name": "Shell card",
+   "blurb": "The base flat-white card container \u2014 gradient-border shell wrapping a padded inner with eyebrow, heading and body.",
+   "states": [
+    "default"
+   ],
+   "html": "<div class=\"shell\"><div class=\"inner\">\n  <div class=\"eyebrow\">Protection</div>\n  <h3 style=\"margin-top:10px\">Every booking runs through a contract</h3>\n  <p class=\"dim\" style=\"font-size:13px;margin-top:10px\">Usage rights, kill fees, payment terms. Even if the brand found you first, route the deal through us and you're covered.</p>\n</div></div>",
+   "requiredIds": [],
+   "initJs": ""
+  },
+  {
+   "name": "Toast",
+   "blurb": "The bottom-center toast notification, shown pinned in its visible (.show) state.",
+   "states": [
+    ".toast.show"
+   ],
+   "html": "<div class=\"toast show\" style=\"position:relative;left:auto;bottom:auto;transform:none;display:inline-block\">Waitlist noted \u2014 invites roll weekly (demo)</div>",
+   "requiredIds": [],
+   "initJs": ""
+  }
+ ]
+}
