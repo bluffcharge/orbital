@@ -142,6 +142,15 @@ doc = f"""<!DOCTYPE html>
 <meta name="description" content="Orbital — a high-contrast, neon-on-navy interface system. Every component live, in one playground.">
 <meta property="og:title" content="Orbital — Design System">
 <meta property="og:description" content="A high-contrast, neon-on-navy interface system. Every component live, in one playground.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://orbital-eta-six.vercel.app/">
+<meta property="og:image" content="https://orbital-eta-six.vercel.app/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Orbital — Design System">
+<meta name="twitter:description" content="A high-contrast, neon-on-navy interface system. Every component live, in one playground.">
+<meta name="twitter:image" content="https://orbital-eta-six.vercel.app/og.jpg">
 <link rel="icon" href="{FAVICON}">
 <style>{baseCSS}</style>
 <style id="orbital">{orbitalCSS}</style>
