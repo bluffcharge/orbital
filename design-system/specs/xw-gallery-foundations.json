@@ -1,7 +1,7 @@
 {
  "categoryId": "foundations",
  "category": "Foundations",
- "blurb": "The raw design tokens, type scale, surfaces, buttons, inputs and feedback primitives that the Orbital Access Pass theme is built from.",
+ "blurb": "The raw design tokens, type scale, surfaces, buttons, inputs and feedback primitives that the Orbital theme is built from.",
  "components": [
   {
    "name": "Color tokens",
