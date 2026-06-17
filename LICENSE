@@ -40,12 +40,18 @@ Copyright (c) 2026 Rob Simon. All rights reserved.
    Commercial Use without remitting this fee is a material breach of this
    license and immediately terminates all rights granted herein.
 
-4. WARRANTY DISCLAIMER
+4. NO WARRANTY
 
-   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-   DEALINGS IN THE SOFTWARE.
+   The Software is provided on an "as is" and "as available" basis, without
+   warranties or conditions of any kind, whether express, implied, statutory,
+   or otherwise, including without limitation any warranties of merchantability,
+   fitness for a particular purpose, title, or non-infringement. Neither the
+   copyright holder nor Strategic UX shall be liable for any claim, loss, or
+   damage of any kind arising from or in connection with the Software or its
+   use, even if advised of the possibility of such damage.
+
+5. GOVERNING TERMS
+
+   This is the entire license for the Software and supersedes any prior or
+   conflicting notice. It is not an open-source license and is not the MIT
+   License; the royalty obligation in Section 3 is a material term.
