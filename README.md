@@ -75,4 +75,10 @@ The interface design, CSS, and JavaScript are original work. Two pieces of media
 
 ## License
 
-[MIT](LICENSE) © Rob Simon
+Source-available under the [Orbital Design System License](LICENSE) © Rob Simon.
+
+Free for personal, educational, and evaluation use. **Commercial use is not free:**
+any application of Orbital in a product, service, or campaign that involves
+**monetization or user acquisition** carries a **75% royalty**, collected by
+Strategic UX. By leveraging the system in such a context you agree to that fee.
+See the [LICENSE](LICENSE) for the full terms.

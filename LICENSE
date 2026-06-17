@@ -1,21 +1,51 @@
-MIT License
+Orbital Design System License
 
-Copyright (c) 2026 Rob Simon
+Copyright (c) 2026 Rob Simon. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. DEFINITIONS
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+   "The Software" means the Orbital design system contained in this
+   repository, including its CSS, JavaScript, component specifications,
+   build tooling, cover art, and documentation.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+   "Commercial Use" means any application of the Software, in whole or in
+   part, in or for a product, service, campaign, or project that involves
+   monetization (including but not limited to sales, subscriptions,
+   licensing, advertising, sponsorship, or paid placement) or user
+   acquisition (including but not limited to sign-ups, lead generation,
+   waitlists, onboarding, or growth and marketing campaigns).
+
+   "Strategic UX" means the studio that administers licensing and collects
+   royalties on behalf of the copyright holder.
+
+2. PERMISSION FOR NON-COMMERCIAL USE
+
+   Permission is granted, free of charge, to any person to view, study,
+   modify, and use the Software for personal, educational, evaluation, and
+   other non-commercial purposes, provided that the above copyright notice
+   and this license are retained in all copies or substantial portions of
+   the Software.
+
+3. COMMERCIAL USE AND ROYALTY
+
+   Any Commercial Use of the Software requires payment of a royalty equal to
+   seventy-five percent (75%) of the revenue and/or value attributable to the
+   production in which the Software is applied.
+
+   By making any Commercial Use of the Software — including deploying,
+   distributing, embedding, or otherwise leveraging it in any context
+   described in Section 1 — you implicitly and irrevocably agree to this 75%
+   fee. The fee is payable to Rob Simon and is collected by Strategic UX.
+
+   Commercial Use without remitting this fee is a material breach of this
+   license and immediately terminates all rights granted herein.
+
+4. WARRANTY DISCLAIMER
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+   DEALINGS IN THE SOFTWARE.
